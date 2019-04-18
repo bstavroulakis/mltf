@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <div id="view"></div>
+    <script type="module">
+      import LinearRegression from "./model.js";
+      const props = {
+        iterations: 100,
+        learningRate: 0.1,
+        xData: [0, 1, 2, 3, 4],
+        yData: [0, 0.015, 0.038, 0.058, 0.12]
+      };
+      const lr = new LinearRegression(props);
+      lr.train();
+      document.querySelector("#view").innerHTML = `y = ${lr.weights[0]} * x + ${
+        lr.weights[1]
+      }`;
+    </script>
+  </body>
+</html>
