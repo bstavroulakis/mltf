@@ -1,0 +1,29 @@
+<html lang="en">
+
+<head>
+	<!-- Load the latest version of TensorFlow.js -->
+	<script src="https://unpkg.com/@tensorflow/tfjs">
+	</script>
+	<script src="https://unpkg.com/@tensorflow-models/mobilenet">
+
+	</script>
+	<script src="https://unpkg.com/@tensorflow-models/knn-classifier">
+
+	</script>
+</head>
+
+<body>
+	<!-- Add an image that we will use to test -->
+	<video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+
+	<div id="console"></div>
+	<!-- Load index.js after the content of the page -->
+	<script src="index.js">
+
+	</script>
+	<script>
+		document.getElementById('webcam').play();
+	</script>
+</body>
+
+</html>

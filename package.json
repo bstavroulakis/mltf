@@ -7,6 +7,10 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@tensorflow-models/speech-commands": "0.3.6",
+    "@tensorflow/tfjs": "1.1.0",
+    "@tensorflow/tfjs-node": "1.0.3",
+    "chart.js": "^2.8.0",
     "finalhandler": "1.1.1",
     "serve-static": "1.13.2"
   },

@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar is-light">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/"> < Back </a>
+        <div class="navbar-item"><b>Tensor</b></div>
+      </div>
+    </nav>
+    <section class="section"><div id="view"></div></section>
+    <script type="module">
+      function append(txt) {
+        document.querySelector("#view").innerHTML += `<p>${txt}</p>`;
+      }
+
+      append("----tensor objects stringified----");
+      tf.scalar(1).print();
+      append("<b>tf.scalar(1) <br/> tf.tensor(1)</b>");
+      append(JSON.stringify(tf.scalar(1)));
+      append(JSON.stringify(tf.tensor(1)));
+      append("<b><br/>tf.tensor([1, 2, 3]) <br/> tf.tensor1d([1, 2, 3])</b>");
+      append(JSON.stringify(tf.tensor([1, 2, 3])));
+      append(JSON.stringify(tf.tensor1d([1, 2, 3])));
+      append(
+        "<b><br/>tf.tensor([[1, 2], [3, 4]]) <br/> tf.tensor2d([[1, 2], [3, 4]]) <br/> tf.tensor2d([1, 2, 3, 4], [2, 2])</b>"
+      );
+      append(JSON.stringify(tf.tensor([[1, 2], [3, 4]])));
+      append(JSON.stringify(tf.tensor2d([[1, 2], [3, 4]])));
+      append(JSON.stringify(tf.tensor2d([1, 2, 3, 4], [2, 2])));
+
+      append("&nbsp;");
+      append("----tensor objects----");
+      append(tf.scalar(1));
+      append(tf.tensor([1, 2, 3]));
+      append(tf.tensor([[1, 2], [3, 4]]));
+
+      append("----dtypes----");
+      append(tf.scalar(1).dtype);
+      append(tf.tensor([1, 2, 3]).dtype);
+      append(tf.tensor([[1, 2], [3, 4]]).dtype);
+
+      append("----shape----");
+      append(JSON.stringify(tf.scalar(1).shape));
+      append(JSON.stringify(tf.tensor([1, 2, 3]).shape));
+      append(JSON.stringify(tf.tensor([[1, 2], [3, 4]]).shape));
+    </script>
+  </body>
+</html>

@@ -9,14 +9,16 @@ class LinearRegression {
   train() {
     for (let i = 0; i < this.iterations; i++) {
       const xLen = this.xData.length;
+      // Guess Errors
       const errorValues = this.xData.map((curr, i) => {
         return this.weights[0] * curr + this.weights[1] - this.yData[i];
       });
+      // Mean Squared Error Slopes
       const slopeW1 =
         (2 / xLen) *
         errorValues
-          .map((ev, i) => {
-            return this.xData[i] * ev;
+          .map((guessError, i) => {
+            return this.xData[i] * guessError;
           })
           .reduce((acc, curr) => {
             return acc + curr;
@@ -24,10 +26,11 @@ class LinearRegression {
 
       const slopeW2 =
         (2 / xLen) *
-        errorValues.reduce((acc, ev) => {
-          return acc + ev;
+        errorValues.reduce((acc, guessError) => {
+          return acc + guessError;
         }, 0);
 
+      // Optimizer
       this.weights[0] = this.weights[0] - slopeW1 * this.learningRate;
       this.weights[1] = this.weights[1] - slopeW2 * this.learningRate;
     }

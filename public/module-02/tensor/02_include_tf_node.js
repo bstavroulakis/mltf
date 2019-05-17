@@ -15,3 +15,11 @@ const tf = require("@tensorflow/tfjs");
 // Optional Load the binding:
 // Use '@tensorflow/tfjs-node-gpu' if running with GPU.
 require("@tensorflow/tfjs-node");
+
+//import * as tf from '@tensorflow/tfjs';
+// You have the Core API: tf.matMul(), tf.softmax(), ...
+// You also have Layers API: tf.model(), tf.layers.dense(), ...
+
+//import * as tfc from '@tensorflow/tfjs-core';
+// You have the Core API: tfc.matMul(), tfc.softmax(), ...
+// No Layers API.

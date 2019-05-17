@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+	<!-- Load the latest version of TensorFlow.js -->
+	<script src="https://unpkg.com/@tensorflow/tfjs">
+	</script>
+	<script src="https://unpkg.com/@tensorflow-models/mobilenet">
+
+	</script>
+	<script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <style>
+    body{
+      background-color: #000;
+      color:#fff;
+    }
+  </style>
+</head>
+
+<body class="is-dark">
+  <section class="hero is-dark">
+    <div class="hero-body">
+      <div class="container">
+        <p class="title">
+          Secure Portal
+        </p>
+      </div>
+    </div>
+  </section>
+	<div class="columns">
+		<div class="column"></div>
+		<div class="column is-half" style="text-align:center">
+			<div style="padding:1rem">
+			  <video autoplay playsinline muted id="webcam" width="224" height="224" class="is-center"></video>
+      </div>
+      <div id="training" style="display:none">
+      Training...
+      </div>
+      <div id="user-area" style="display:none">
+        <div id="user-name"></div>
+        <button class="button" id="logout-btn">Logout</button>
+      </div>
+      <div id="register-area">
+        <p style="1rem;margin:1rem;">
+          <input id="register-name" type="text" class="input" placeholder="Name"/>
+        </p>
+        <p>
+          <button class="button" id="login-btn">Login</button> or 
+          <button class="button" id="register-btn">Register</button>
+        </p>
+      </div>
+		</div>
+		<div class="column"></div>
+	</div>
+
+	<div id="console"></div>
+	<!-- Load index.js after the content of the page -->
+	<script src="index.js">
+
+	</script>
+	<script>
+		document.getElementById('webcam').play();
+	</script>
+</body>
+
+</html>

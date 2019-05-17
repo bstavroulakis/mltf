@@ -1,3 +1,5 @@
+// Sets up static file server.
+// Code starts in index.html in the public folder
 var http = require("http");
 
 var finalhandler = require("finalhandler");
